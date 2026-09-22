@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #ffffff;
+  --color-ink-soft: #f6f3ff;
+  --color-surface: #ffffff;
+  --color-line: #e5e0fb;
+  --color-paper: #241a3f;
+  --color-muted: #6f6580;
+  --color-accent: #7c3aed;
+  --color-accent-soft: #a78bfa;
+
+  --radius-card: 1rem;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* One focus ring everywhere, visible against white. */
+:focus-visible {
+  outline: 2px solid var(--color-accent-soft);
+  outline-offset: 2px;
+}
