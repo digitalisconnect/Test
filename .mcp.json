@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "saas-builder-monmenu-fr": {
+      "type": "http",
+      "url": "https://www.saas-builder.com/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${SAAS_BUILDER_MCP_TOKEN}"
+      }
+    }
+  }
+}

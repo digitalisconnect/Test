@@ -30,3 +30,27 @@ npm run dev
 
 Copy `.env.example` to `.env.local` and fill in the values. No secret is
 committed to this repository.
+
+## SaaS Builder MCP server (Claude Code)
+
+`.mcp.json` registers the SaaS Builder MCP server for this project. The
+connection token is never stored in the repository: it is read from the
+`SAAS_BUILDER_MCP_TOKEN` environment variable.
+
+```bash
+export SAAS_BUILDER_MCP_TOKEN=sbmcp_...   # your token from saas-builder.com
+claude                                    # approve the project MCP server when prompted
+claude mcp list                           # should show saas-builder-monmenu-fr as connected
+```
+
+Alternatively, register it once for your user without the project file:
+
+```bash
+claude mcp add --transport http saas-builder-monmenu-fr \
+  https://www.saas-builder.com/api/mcp \
+  --header "Authorization: Bearer $SAAS_BUILDER_MCP_TOKEN"
+```
+
+The server only accepts a static bearer token and does not implement OAuth,
+so it cannot be added as a custom connector in the Claude web or mobile app
+("Impossible de lancer la connexion"). Use it from Claude Code instead.
